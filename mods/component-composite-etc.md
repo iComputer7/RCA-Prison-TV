@@ -2,12 +2,14 @@
 
 ## Misc. Important Notes
 
+* ***My instructions are not perfect! I do not know if there are multiple board revisions with different layouts! Sometimes I forget to write stuff down!***
+* The silkscreen on this board is awful. Some labels are incredibly ambiguous. 
 * BC847A is a SOT-23 surface mount NPN transistor
 * All SMD passives are imperial 0603 unless noted otherwise
 * The SMD diodes are kind of a crapshoot but seem to mostly be SOD-323?
 * THT caps are polarized electrolytic unless specified otherwise. There are no specific ESR requirements.
 * Some parts on the list may already be populated from the factory. If they are, double-check that they're the correct value. Replace them if they're not.
-* The PCB has some sort of conformal coating on the bottom side that makes soldering a bit of a pain. Use plenty of flux. Prepare for a slight and unpleasant chemical smell when cleaning with IPA.
+* The PCB has some sort of conformal coating on the bottom side that makes soldering a bit of a pain. Use plenty of flux. Prepare for an unpleasant chemical smell when cleaning with IPA.
 
 ---
 
@@ -35,6 +37,27 @@ Useful if you're content with removing the DTV tuner to get component video with
 
 ---
 
+## Misc Jumper Wires
+
+These are the jumper wires I had to add back. Again, your board may be different. Follow the traces and make sure things are connected to where they need to be. J seems to refer to a through-hole jumper wire while JP seems to be a SMD 0 ohm resistor but not everything follows that rule.
+
+* J204
+* JP910
+* J931
+* J917
+* J903
+* JP915
+* J902
+* J932
+* J907
+* J906
+* J904
+* J922
+* J905
+* J912
+
+---
+
 ## Composite input
 
 This is the front composite input, which is mounted on a separate PCB that has a few passives on it (not listed here. TODO)
@@ -50,7 +73,7 @@ R910 | SMD | col KK row 3, near D425 | 82 ohm
 R912 | SMD | near Q907 | 10k ohm
 R924 | SMD | col KK row 8, near C909 | 470 ohm, already populated with 0 ohm resistor
 JP903 | THT | in between analog tuner and C921 | jumper wire
-D913 | ??? | can't fucking find it | zener TVS diode? "5V1"
+D910 | SMD | TODO | zener TVS diode? "5V1"
 
 ---
 
@@ -75,19 +98,17 @@ C918 | SMD | col MM row 2+3 in between IC901 and IC902 | 0.01uF
 C919 | THT | next to J903 | 10uF 16v
 C952 | THT | next to P904 | 10uF 16v
 Q903 | SMD | next to R941, R945, R940, Q901 | BC847A (NPN)
-D914 | ??? | yeah good fuckin question dude | zener TVS diode? "12V"
+D914? | SMD | TODO | zener TVS diode? "12V"
 Q901 | SMD | in between Q901 and Q907 | BC847 (NPN)
 
 ---
 
 ## Component Video + Video 2
 
-Remove these jumpers if populated:
+Remove these jumpers if populated: (**TODO: double check this is correct**)
 
 * JP901 (SMD resistor)
 * JP902 (SMD resistor)
-* JP903 (wire)
-* JP904 (wire)
 * JP905 (SMD resistor)
 
 Refdes | Type | Location | Part
@@ -107,7 +128,7 @@ D904 | SMD | col LL row 1 | 5.1v TVS diode
 D906 | SMD | next to D904 | 12v TVS diode
 D907 | SMD | col LL row 1 | 5.1v TVS diode
 D909 | SMD | col KK row 1 | 12v TVS diode
-D915 | SMD | nonexistent, who the hell knows | 12v TVS diode
+D915? | SMD | ??? | 12v TVS diode
 R901 | SMD | col KK row 1 | 1k ohm resistor
 R902 | SMD | col LL row 1 | 1k ohm resistor
 R903 | SMD | col MM row 1 | 82 ohm resistor
@@ -125,6 +146,7 @@ R937 | SMD | next to IC901 | 47k ohm resistor
 R942 | SMD | col NN row 3 | 10k ohm resistor
 R943 | THT | by analog tuner and L891 | 10k ohm resistor
 R954 | SMD | next to C953, col KK row 2 | 1k ohm resistor
-JP910 | THT | by C907 next to the analog tuner | jumper wire, yellow
+JP910 | TODO | by C907 next to the analog tuner | *TODO: forgot if this is a 0 ohm SMD or a jumper wire*
 JP914 | THT | next to R219 | jumper wire, white
+J931 | THT | TODO | jumper wire
 Q902 | SMD | next to IC902 | BC847 NPN transistor
